@@ -1,5 +1,9 @@
 server:
+<<<<<<< HEAD
   port: 8770
+=======
+  port: 8888
+>>>>>>> d483c459c63b4220866cc8a9ca5516d0a6192dc5
 eureka:
   client:
     serviceUrl:
