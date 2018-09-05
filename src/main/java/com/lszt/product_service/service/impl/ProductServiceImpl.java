@@ -2,12 +2,16 @@ package com.lszt.product_service.service.impl;
 
 import com.lszt.product_service.domain.Product;
 import com.lszt.product_service.service.ProductService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import java.util.*;
 
 @Service
 public class ProductServiceImpl implements ProductService {
     private static final Map<Integer, Product> dapMap = new HashMap<>();
+
+    private final Logger logger = LoggerFactory.getLogger(getClass());
 
     static {
         Product p1 = new Product(1, "ipx", 999, 10);
@@ -28,6 +32,7 @@ public class ProductServiceImpl implements ProductService {
     public List<Product> listProduct() {
         Collection<Product> collection = dapMap.values();
         List<Product> list = new ArrayList<>(collection);
+        logger.info("service listProduct");
         return list;
     }
 
