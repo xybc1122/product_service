@@ -1,0 +1,30 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8660/eureka/
+spring:
+  application:
+    name: product-service
+    #指定从哪个配置中心读取
+  cloud:
+    config:
+      discovery:
+        service-id: CONFIG-SERVER
+        #开启发现的功能 默认false
+        enabled: true
+      #配置文件后缀名称
+      profile: test
+#rabbitmq消息中间件
+#  rabbitmq:
+#    host: 192.168.3.222
+#    port: 5671
+#    username: guest
+#    password: guest
+      #读取哪个分支
+      #label: master
+#actuator监控追踪 *代表打印全部
+#management:
+#    endpoints:
+#      web:
+#        exposure:
+#          include: "*"
