@@ -1,7 +1,10 @@
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://127.0.0.1:8660/eureka/
+      defaultZone: http://192.168.3.222:8660/eureka/
+  instance:
+      instance-id: ${spring.cloud.client.ip-address}:${server.port}
+      prefer-ip-address: true
 spring:
   application:
     name: product-service
@@ -14,17 +17,3 @@ spring:
         enabled: true
       #配置文件后缀名称
       profile: test
-#rabbitmq消息中间件
-#  rabbitmq:
-#    host: 192.168.3.222
-#    port: 5671
-#    username: guest
-#    password: guest
-      #读取哪个分支
-      #label: master
-#actuator监控追踪 *代表打印全部
-#management:
-#    endpoints:
-#      web:
-#        exposure:
-#          include: "*"
